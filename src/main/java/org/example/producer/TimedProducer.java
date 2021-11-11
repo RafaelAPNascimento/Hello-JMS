@@ -1,6 +1,5 @@
 package org.example.producer;
 
-import jakarta.annotation.PostConstruct;
 import jakarta.ejb.Schedule;
 import jakarta.ejb.Stateless;
 
@@ -14,6 +13,6 @@ public class TimedProducer {
     @Schedule(hour = "*", minute = "*", second = "*/3", info = "Every 3 seconds", timezone = "UTC", persistent = false)
     public void sendToQueue() {
 
-        LOG.info("producing...");
+        LOG.info("producing LOL...");
     }
 }
