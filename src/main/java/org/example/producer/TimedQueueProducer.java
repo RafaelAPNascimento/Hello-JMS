@@ -12,7 +12,7 @@ import jakarta.jms.TextMessage;
 
 @Stateless
 @LocalBean
-public class TimedProducer {
+public class TimedQueueProducer {
 
     @Inject
     private JMSContext jmsContext;

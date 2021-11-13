@@ -12,9 +12,9 @@ import java.util.logging.Logger;
 @MessageDriven(activationConfig = {
         @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/HelloQueue")
 })
-public class MyReceiver implements MessageListener {
+public class QueueReceiver implements MessageListener {
 
-    private final static Logger LOG = Logger.getLogger(MyReceiver.class.getName());
+    private final static Logger LOG = Logger.getLogger(QueueReceiver.class.getName());
 
     @Override
     public void onMessage(Message message) {

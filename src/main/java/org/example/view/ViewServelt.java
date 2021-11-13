@@ -6,7 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.producer.TimedProducer;
+import org.example.model.CreditCard;
+import org.example.producer.TopicProducerService;
 
 import java.io.IOException;
 
@@ -14,11 +15,16 @@ import java.io.IOException;
 public class ViewServelt extends HttpServlet {
 
     @EJB
-    private TimedProducer timedProducer;
+    private TopicProducerService topicProducer;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        resp.getWriter().println(String.format("<h1>View Servlet: %s</h1>", timedProducer.toString()));
+        String cvv = req.getParameter("cvv");
+        String number = req.getParameter("number");
+
+        topicProducer.sendMessage(new CreditCard(cvv, number));
+
+        resp.getWriter().println("<h1>Credit Card sent to the card operator topic...</h2>");
     }
 }
