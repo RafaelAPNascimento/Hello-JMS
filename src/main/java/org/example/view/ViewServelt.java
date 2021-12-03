@@ -25,6 +25,6 @@ public class ViewServelt extends HttpServlet {
 
         topicProducer.sendMessage(new CreditCard(cvv, number));
 
-        resp.getWriter().println("<h1>Credit Card sent to the card operator topic...</h2>");
+        resp.getWriter().println("<h1>Credit Card sent to the card operator topic...</h>");
     }
 }

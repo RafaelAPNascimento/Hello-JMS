@@ -16,7 +16,7 @@ public class TopicProducerService {
     @Inject
     private JMSContext context;
 
-    @Resource(lookup = "jms/HelloTopic")
+    @Resource(lookup = "jms/PurchaseTopic")
     private Topic helloTopic;
 
     public void sendMessage(CreditCard creditCard) {
